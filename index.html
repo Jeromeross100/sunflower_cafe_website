@@ -28,8 +28,7 @@
 
     <section id="home" class="hero">
         <div class="hero-overlay">
-            <div class="container">
-                </div>
+            <div class="container"></div>
         </div>
     </section>
 
@@ -50,8 +49,9 @@
             <div class="menu-grid">
                 
                 <div class="menu-card">
-                    <h3>Morning Brews</h3>
-                    <p>Hearty breakfast plates, fresh-brewed coffee, and morning favorites.</p>
+                    <h3 id="morning-title">Morning Brews</h3>
+                    <div id="morning-items-container">
+                        </div>
                 </div>
                 
                 <div id="daily-special-container" class="menu-card special-highlight" style="display:none;">
@@ -62,8 +62,9 @@
                 </div>
 
                 <div class="menu-card">
-                    <h3>Cafe Eats</h3>
-                    <p>Signature lunch sandwiches, garden salads, and daily house specials.</p>
+                    <h3 id="eats-title">Cafe Eats</h3>
+                    <div id="eats-items-container">
+                        </div>
                 </div>
 
             </div>
@@ -73,7 +74,6 @@
     <section id="contact" class="container section">
         <h2>Get in Touch</h2>
         <div class="contact-wrapper">
-            
             <form action="https://formspree.io/f/mqeebwyv" method="POST" class="contact-form">
                 <input type="text"     name="name"    placeholder="Your Name" required>
                 <input type="email"    name="email"   placeholder="Your Email" required>
@@ -85,7 +85,6 @@
                 <p><strong>Business:</strong> (334) 390-8597</p>
                 <p><strong>Email:</strong> b6stephanie@aol.com</p>
             </div>
-
         </div>
     </section>
 
@@ -105,24 +104,6 @@
                 }
             });
         }
-
-        // Fetch Daily Specials
-        async function fetchSpecial() {
-            try {
-                const response = await fetch('/content/specials/index.json');
-                if (response.ok) {
-                    const data = await response.json();
-                    document.getElementById('special-title').innerText = data.title;
-                    document.getElementById('special-body').innerText  = data.body;
-                    document.getElementById('special-price').innerText = data.price;
-                    document.getElementById('daily-special-container').style.display = 'block';
-                }
-            } catch (e) { 
-                console.log("No daily special found."); 
-            }
-        }
-        
-        fetchSpecial();
     </script>
 </body>
 </html>

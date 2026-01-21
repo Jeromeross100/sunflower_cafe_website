@@ -1,0 +1,11 @@
+﻿{
+  "title": "Morning Brews",
+  "items": [
+    {
+      "item_name": "Farmhouse Breakfast",
+      "item_price": "$12.00",
+      "item_desc": "Two eggs, bacon, grits, and toast.",
+      "is_sold_out": false
+    }
+  ]
+}

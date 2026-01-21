@@ -15,3 +15,17 @@ collections:
       - {label: "Special Name", name: "title", widget: "string"}
       - {label: "Price", name: "price", widget: "string"}
       - {label: "Details", name: "body", widget: "markdown"}
+
+  - name: "menu_sections"
+    label: "Main Menu"
+    folder: "content/menu"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Section Title", name: "title", widget: "string"}
+      - {label: "Menu Items", name: "items", widget: "list", fields: [
+          {label: "Item Name", name: "item_name", widget: "string"},
+          {label: "Price", name: "item_price", widget: "string"},
+          {label: "Description", name: "item_desc", widget: "text"},
+          {label: "Sold Out?", name: "is_sold_out", widget: "boolean", default: false}
+        ]}
