@@ -51,7 +51,8 @@
                 <div class="menu-card">
                     <h3 id="morning-title">Morning Brews</h3>
                     <div id="morning-items-container">
-                        </div>
+                        <p class="loading-text">Loading fresh brews...</p>
+                    </div>
                 </div>
                 
                 <div id="daily-special-container" class="menu-card special-highlight" style="display:none;">
@@ -64,7 +65,8 @@
                 <div class="menu-card">
                     <h3 id="eats-title">Cafe Eats</h3>
                     <div id="eats-items-container">
-                        </div>
+                        <p class="loading-text">Loading delicious eats...</p>
+                    </div>
                 </div>
 
             </div>
@@ -93,12 +95,14 @@
     </footer>
 
     <script src="script.js"></script>
+    
     <script>
         // Netlify Identity Login Logic
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
                     window.netlifyIdentity.on("login", () => {
+                        // After logging in, send them straight to the editor
                         document.location.href = "/admin/";
                     });
                 }
