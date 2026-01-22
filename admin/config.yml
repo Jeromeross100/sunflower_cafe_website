@@ -6,26 +6,44 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "specials"
-    label: "Daily Specials"
-    folder: "content/specials"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Special Name", name: "title", widget: "string"}
-      - {label: "Price", name: "price", widget: "string"}
-      - {label: "Details", name: "body", widget: "markdown"}
+  - name: "menu"
+    label: "Main Menu Management"
+    files:
+      - name: "morning_brews"
+        label: "Morning Brews (Edit/Replace)"
+        file: "content/menu/morning-brews.json"
+        fields:
+          - { label: "Section Title", name: "title", widget: "string" }
+          - label: "Menu Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Item Name", name: "item_name", widget: "string" }
+              - { label: "Price", name: "item_price", widget: "string" }
+              - { label: "Description", name: "item_desc", widget: "text" }
+              - { label: "Sold Out?", name: "is_sold_out", widget: "boolean", default: false }
 
-  - name: "menu_sections"
-    label: "Main Menu"
-    folder: "content/menu"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Section Title", name: "title", widget: "string"}
-      - {label: "Menu Items", name: "items", widget: "list", fields: [
-          {label: "Item Name", name: "item_name", widget: "string"},
-          {label: "Price", name: "item_price", widget: "string"},
-          {label: "Description", name: "item_desc", widget: "text"},
-          {label: "Sold Out?", name: "is_sold_out", widget: "boolean", default: false}
-        ]}
+      - name: "cafe_eats"
+        label: "Cafe Eats (Edit/Replace)"
+        file: "content/menu/cafe-eats.json"
+        fields:
+          - { label: "Section Title", name: "title", widget: "string" }
+          - label: "Menu Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Item Name", name: "item_name", widget: "string" }
+              - { label: "Price", name: "item_price", widget: "string" }
+              - { label: "Description", name: "item_desc", widget: "text" }
+              - { label: "Sold Out?", name: "is_sold_out", widget: "boolean", default: false }
+
+  - name: "specials_collection"
+    label: "Today's Daily Special"
+    files:
+      - name: "daily_special"
+        label: "Edit Current Special"
+        file: "content/specials/index.json"
+        fields:
+          - { label: "Special Title", name: "title", widget: "string" }
+          - { label: "Price", name: "price", widget: "string" }
+          - { label: "Description/Details", name: "body", widget: "text" }
