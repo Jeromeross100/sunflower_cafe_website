@@ -46,30 +46,35 @@
     <section id="menu" class="section bg-light">
         <div class="container">
             <h2>Our Menu</h2>
-            <div class="menu-grid">
+            
+            <div class="coming-soon-wrapper" style="margin-top: 40px; padding: 80px 20px; background: white; border-radius: 20px; border: 2px solid #fdf8e1; box-shadow: 0 10px 30px rgba(255, 204, 0, 0.1); text-align: center; position: relative; overflow: hidden;">
                 
+                <div style="font-size: 4rem; margin-bottom: 20px; filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.3));">🌻</div>
+                
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: #4a3728; margin: 0; letter-spacing: 3px; text-transform: uppercase;">
+                    Coming Soon
+                </h3>
+                
+                <div style="margin: 25px auto 0; height: 5px; width: 60px; background: linear-gradient(90deg, #ffcc00, #ffb300); border-radius: 10px;"></div>
+                
+                <p style="margin-top: 20px; font-family: 'Poppins', sans-serif; color: #8d7b6d; font-style: italic; letter-spacing: 1px;">
+                    Harvesting fresh flavors for you...
+                </p>
+
+                <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(255,204,0,0.1) 0%, rgba(255,204,0,0) 70%); border-radius: 50%;"></div>
+            </div>
+
+            <div class="menu-grid" style="display: none;">
                 <div class="menu-card">
                     <h3 id="morning-title">Morning Brews</h3>
-                    <div id="morning-items-container">
-                        <p class="loading-text">Loading fresh brews...</p>
-                    </div>
+                    <div id="morning-items-container"></div>
                 </div>
-                
-                <div id="daily-special-container" class="menu-card special-highlight" style="display:none;">
-                    <span class="badge">Today's Special</span>
-                    <h3 id="special-title">Loading Special...</h3>
-                    <p id="special-body"></p>
-                    <p><strong id="special-price"></strong></p>
-                </div>
-
                 <div class="menu-card">
                     <h3 id="eats-title">Cafe Eats</h3>
-                    <div id="eats-items-container">
-                        <p class="loading-text">Loading delicious eats...</p>
-                    </div>
+                    <div id="eats-items-container"></div>
                 </div>
-
             </div>
+
         </div>
     </section>
 
@@ -102,7 +107,6 @@
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
                     window.netlifyIdentity.on("login", () => {
-                        // After logging in, send them straight to the editor
                         document.location.href = "/admin/";
                     });
                 }
